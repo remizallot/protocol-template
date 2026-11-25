@@ -10,15 +10,39 @@ copy it without it breaking.
 | `build_protocol.py` | turns the filled-in Markdown into `PROTOCOL.html` (Copy button on every command) and, with `--pdf`, `PROTOCOL.pdf`. Python standard library only |
 | `README.md` | this file: how to ask for it, and the rules the protocol must follow |
 
+## Install
+
+Clone it anywhere. The examples below assume `~/code/protocol-template`; if
+you put it somewhere else, use that path instead.
+
+```bash
+git clone https://github.com/remizallot/protocol-template ~/code/protocol-template
+```
+
+There is nothing to build or install after that:
+
+- **Python 3** is all the builder needs (standard library only, no `pip`).
+- **Chrome or Chromium** is needed only for the PDF. Without it the HTML page
+  is still written and the script says the PDF was skipped.
+
+To update later:
+
+```bash
+git -C ~/code/protocol-template pull
+```
+
 ## How to ask for it
 
-In a session opened on another repository, say:
+The template is written to be handed to an AI coding assistant, but a person
+can follow it just as well. In a session opened on another repository, say:
 
 > Write a run protocol for <what I want to run> following the template in
 > `~/code/protocol-template/`. Read its README first and follow the rules.
 > Put the result in <folder>.
 
 ## Building the pages
+
+Run this in the folder that holds your filled-in `PROTOCOL.md`:
 
 ```bash
 python3 ~/code/protocol-template/build_protocol.py PROTOCOL.md --pdf
